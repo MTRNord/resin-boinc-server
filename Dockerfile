@@ -3,6 +3,7 @@ FROM resin/armv7hf-debian-qemu
 MAINTAINER MTRNord <info@nordgedanken.de>
 
 RUN [ "cross-build-start" ]
+ENV DOCKER_HOST unix:///var/run/rce.sock
 
 #install packages
 RUN apt-get update && apt-get install -y \
