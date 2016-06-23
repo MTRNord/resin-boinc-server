@@ -21,7 +21,7 @@ RUN ln -s /usr/bin/rce /usr/bin/docker
 RUN apt-get update && apt-get install -y apt-transport-https && echo "deb https://packagecloud.io/Hypriot/Schatzkiste/debian/ jessie main" | tee /etc/apt/sources.list.d/hypriot.list && apt-get update && apt-get install -y --force-yes docker-compose
 
 #configure server
-RUN git clone https://github.com/marius311/boinc-server-docker.git && cd boinc-server-docker && cd ..
+RUN git clone https://github.com/MTRNord/boinc-server-docker.git && cd boinc-server-docker && make build && cd ..
 RUN echo "127.0.0.1 www.boincserver.com" >> /etc/hosts
 COPY . /app
 
