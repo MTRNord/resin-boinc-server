@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
         apt-transport-https \
         ca-certificates \
         make \
-        build-essential
+        build-essential \
+        wget
 
 # Install resin.io's rce (docker)
 COPY ./rce /usr/bin/rce
