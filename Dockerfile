@@ -15,5 +15,9 @@ RUN echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" >> /etc/apt
 RUN apt-get update && apt-get install linux-image-extra-$(uname -r) && apt-get update &&  apt-get install docker-engine && service docker start
 
 #configure server
-RUN git clone https://github.com/marius311/boinc-server-docker.git && cd boinc-server-docker && make up
+RUN git clone https://github.com/marius311/boinc-server-docker.git && cd boinc-server-docker && cd ..
 RUN echo "127.0.0.1 www.boincserver.com" >> /etc/hosts
+COPY . /app
+
+
+CMD ["bash", "cd boinc-server-docker && make up"]
