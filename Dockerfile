@@ -17,7 +17,6 @@ COPY ./rce /usr/bin/rce
 RUN chmod u+x /usr/bin/rce
 RUN ln -s /usr/bin/rce /usr/bin/docker
 
-RUN service docker start
 RUN wget https://github.com/docker/compose/releases/download/1.7.1/docker-compose-Linux-x86_64 >> sudo /usr/local/bin/docker-compose && mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 
