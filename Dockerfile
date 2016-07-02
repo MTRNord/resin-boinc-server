@@ -24,6 +24,8 @@ RUN apt-get update && apt-get install -y apt-transport-https && echo "deb https:
 #configure server
 RUN git clone https://github.com/MTRNord/boinc-server-docker.git && cd boinc-server-docker && make build && cd ..
 RUN echo "127.0.0.1 www.boincserver.com" >> /etc/hosts
+RUN wget http://repo.ajenti.org/debian/key -O- | apt-key add - && echo "deb http://repo.ajenti.org/ng/debian main main" >> /etc/apt/sources.list && apt-get update && apt-get install -y ajenti
+
 COPY . /app
 
 RUN [ "cross-build-end" ]
