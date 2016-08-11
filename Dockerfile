@@ -3,7 +3,7 @@ FROM resin/armv7hf-debian-qemu
 MAINTAINER MTRNord <info@nordgedanken.de>
 
 RUN [ "cross-build-start" ]
-ENV DOCKER_HOST unix:///var/run/docker.sock
+ENV DOCKER_HOST unix:///var/run/rce.sock
 
 #install packages
 RUN apt-get update && apt-get install -y \
@@ -20,7 +20,6 @@ RUN chmod +x /usr/bin/rce
 RUN ln -s /usr/bin/rce /usr/bin/docker
 RUN chmod +x /usr/bin/docker
 RUN rm -rf /var/run/rce.pid
-RUN chmod 777 /var/run/docker.sock
 
 RUN apt-get update && apt-get install -y apt-transport-https && echo "deb https://packagecloud.io/Hypriot/Schatzkiste/debian/ jessie main" | tee /etc/apt/sources.list.d/hypriot.list && apt-get update && apt-get install -y --force-yes docker-compose
 
