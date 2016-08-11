@@ -28,5 +28,3 @@ RUN echo "127.0.0.1 http://ProjectStreet.dynu.com" >> /etc/hosts
 COPY . /app
 
 RUN [ "cross-build-end" ]
-
-CMD ["/bin/bash", "/app/start"]
