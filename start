@@ -1,8 +1,10 @@
 #!/bin/bash
 if [[ "$INITSYSTEM" == "on" ]]; then
-  echo "RUNNING"
+	echo "RUNNING"
+	cd boinc-server-docker && make build && make up
 else
 	echo "RUNNING"
+	cd boinc-server-docker && make build && make up
 fi
 
 while true
