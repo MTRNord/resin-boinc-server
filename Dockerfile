@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y apt-transport-https && echo "deb https:
 
 #configure server
 RUN git clone --recursive https://github.com/MTRNord/boinc-server-docker.git && cd boinc-server-docker && make build && cd ..
-RUN echo "127.0.0.1 www.boincserver.com" >> /etc/hosts
+RUN echo "127.0.0.1 http://ProjectStreet.dynu.com" >> /etc/hosts
 
 COPY . /app
 
