@@ -1,0 +1,12 @@
+#!/bin/bash
+if [[ "$INITSYSTEM" == "on" ]]; then
+  echo "RUNNING"
+else
+	echo "RUNNING"
+fi
+
+while true
+do
+	echo "App exited but container is still running to allow web terminal access"
+	sleep 3600
+done
