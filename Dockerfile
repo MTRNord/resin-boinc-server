@@ -29,4 +29,4 @@ COPY . /app
 
 RUN [ "cross-build-end" ]
 
-CMD ["bash", "cd boinc-server-docker && make build && make up"]
+CMD ["/bin/bash", "/app/start"]
